@@ -1,5 +1,4 @@
 (ns learn.core
-  ;; (:require [learn.functions.factorial :refer [factorial]])
   (:gen-class))
 
 (defn -main
