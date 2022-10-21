@@ -15,18 +15,13 @@
     (str/replace (str/join #"\n" (map #(str/trimr (apply str %)) ss)) "\\n" "\n")
     (str/trimr (apply str (flatten ss)))))
 
-(defn- get-formatted-lines
+(defn strip-comments
   [txt symbs]
   (->> (str/split-lines txt)
        (map #(get-string % symbs))
-       (get-lines)))
-
-(defn strip-comments
-  [txt symbs]
-  (get-formatted-lines txt symbs))
-
+       get-lines))
 
 (strip-comments "apple ! banana" '("#" "!"))
 (strip-comments "apples, pears # and bananas\ngrapes\nbananas !apples" '("#" "!"))
 (strip-comments "a #b\nc\nd $e f g" '("#" "$"))
-(strip-comments "a \n b \nc " (quote ("#" "$")))
+(strip-comments "a \n b \nc " ('("#" "$")))

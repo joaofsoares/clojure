@@ -1,5 +1,4 @@
 (ns learn.functions.7kyu.rotate-to-max
-  #_{:clj-kondo/ignore [:refer-all]}
   (:require [clojure.core :refer :all]))
 
 (defn- rotate-left [xs]
@@ -13,7 +12,7 @@
 
 (defn max-rot [n]
   (->> (get-values (str n) 0 (empty []))
-       (map parse-long)
+       (map #(Long/valueOf %))
        (reduce max)))
 
 (max-rot 56789)
