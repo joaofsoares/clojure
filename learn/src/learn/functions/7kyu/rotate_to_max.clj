@@ -1,5 +1,4 @@
-(ns learn.functions.7kyu.rotate-to-max
-  (:require [clojure.core :refer :all]))
+(ns learn.functions.7kyu.rotate-to-max)
 
 (defn- rotate-left [xs]
   (str (subs xs 1) (get xs 0)))
