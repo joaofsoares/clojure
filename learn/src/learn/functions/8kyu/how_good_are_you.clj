@@ -1,5 +1,3 @@
-;; how good are you really
-
 (ns learn.functions.8kyu.how-good-are-you)
 
 (defn- find-scores-avg [scores]

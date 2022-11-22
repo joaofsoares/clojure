@@ -1,6 +1,6 @@
 (ns learn.functions.5kyu.maximum-subarray-sum)
 
-(defn get-max
+(defn- get-max
   [xs current-sum max-sum]
   (if (empty? xs)
     max-sum
